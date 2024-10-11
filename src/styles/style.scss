@@ -1,0 +1,255 @@
+/*Шрифт по умолчанию*/
+$fontFamilyRegularProDisplay: "SF-Pro-Display-Regular", sans-serif;
+$fontFamilyBoldProDisplay: "SF-Pro-Display-Bold", sans-serif;
+$fontFamilyMediumProDisplay: "SF-Pro-Display-Medium", sans-serif;
+$fontFamilyRegular: "SFUIText-Regular", sans-serif;
+$fontFamilyRegular: "SFUIText-Regular", sans-serif;
+$fontFamilyMedium: "SFUIText-Medium", sans-serif;
+$fontSize: 16px;
+/*--------------------*/
+/*ПЕРЕМЕННЫЕ*/
+$maxWidth: 1920px;
+$maxHeight: 1504px;
+$maxWidthContainer: 1518px;
+$fontColor: #000000;
+$greyBorder: #EEEEEE;
+$greyFont: #888888;
+$green: #27AE60;
+$red: #EB5757;
+$md1: $maxWidthContainer;
+$md2: 991.98px;
+$md3: 767.98px;
+$md5: 1496.9px;
+
+/*--------------------*/
+/*Подключение файлов стилей*/
+@import "icons";
+@import 'fonts';
+@import "resetCSS";
+@import "blocks/card.scss";
+@import "blocks/filter.scss";
+@import "blocks/favorites.scss";
+@import "blocks/cart.scss";
+/*--------------------*/
+
+/*ОСНОВНАЯ СЕТКА*/
+body {
+  position: relative;
+  color: $fontColor;
+  font-size: $fontSize;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/*--------------------*/
+/*ОСНОВНАЯ СЕТКА*/
+.container {
+  position: relative;
+  max-width: $maxWidthContainer;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+}
+
+.loader:after {
+  box-shadow: 0 2px 0 $red inset;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.main-title {
+  font-family: $fontFamilyBoldProDisplay;
+  font-size: 36px;
+  line-height: 130%;
+  margin-bottom: 32px;
+}
+
+.subtitle {
+  font-family: $fontFamilyBoldProDisplay;
+  font-size: 24px;
+  line-height: 130%;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  max-width: 150px;
+  margin: 0 auto;
+  font-family: $fontFamilyRegular;
+  text-align: center;
+  padding: 8px 22px;
+  border: 1px solid $greyBorder;
+  color: $fontColor;
+  transition: all 0.5s ease 0s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+}
+
+.old-price {
+  font-family: $fontFamilyRegular;
+  color: $greyFont;
+  text-decoration: line-through;
+  margin-right: 9.14px;
+}
+
+.card-name {
+  font-family: $fontFamilyMedium;
+  line-height: 140%;
+  font-weight: 500;
+  letter-spacing: 0.0094em;
+  margin-bottom: 10px;
+}
+
+.checked {
+  color: $green;
+}
+.cart{
+  transition: all 0.5s ease 0s;
+
+  &:hover{
+    color: $green;
+  }
+}
+
+.delete {
+  cursor: pointer;
+  margin-top: 9px;
+  transition: all 0.5s ease 0s;
+
+  &:hover {
+    color: $red;
+  }
+}
+.heart{
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.home {
+  &__items {
+    min-width: $md3;
+
+    @media all and (max-width: $md3) {
+      min-width: 0;
+    }
+  }
+}
+
+.header {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 0 32px 0;
+
+    @media all and (max-width: $md3) {
+      flex-direction: column;
+    }
+  }
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  font-family: $fontFamilyRegular;
+  line-height: 100%;
+  color: $greyFont;
+
+  @media all and (max-width: $md3) {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+
+  &__item {
+    &:not(:last-child)::after {
+      content: "/";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 28px;
+      color: #5A5A5A;
+      margin: 0 8px;
+    }
+
+    &:last-child {
+      color: $fontColor;
+    }
+
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
+
+.actions {
+
+  font-size: 22px;
+  line-height: 100%;
+
+
+  &__row {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    line-height: 100%;
+  }
+
+  &__cart {
+    cursor: pointer;
+    color: $fontColor;
+    margin-right: 18px;
+
+  }
+
+}
+.card-non-code {
+  margin-top: 44px;
+
+}

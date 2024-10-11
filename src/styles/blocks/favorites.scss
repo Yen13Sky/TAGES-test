@@ -1,0 +1,73 @@
+.favorites-card {
+
+  &__item {
+    min-width: 992px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $greyBorder;
+    padding: 18px;
+    margin: 32px 0 0 0;
+
+    &:last-child {
+      margin-bottom: 32px;
+    }
+
+    @media all and (max-width: $md2) {
+      flex-direction: column;
+      min-width: 0;
+    }
+  }
+}
+
+.favorites-card-item {
+  &__actions {
+    @media all and (max-width: $md2) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 22px;
+    }
+  }
+}
+
+.card-item-content {
+
+  &__name {
+
+    font-family: $fontFamilyMedium;
+    line-height: 140%;
+    font-weight: 500;
+    letter-spacing: 0.0094em;
+    margin-bottom: 10px;
+
+  }
+
+  &__old-price {
+    text-align: center;
+    margin-bottom: 12px;
+    margin-right: 0 !important;
+  }
+
+  &__current-price {
+    font-family: $fontFamilyRegular;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.card-item-action {
+  font-size: 24px;
+
+  &__cart {
+    cursor: pointer;
+    margin-bottom: 9px;
+  }
+
+  &__delete {
+    @media all and (max-width: $md2) {
+      margin-top: 0 !important;
+      margin-left: 18px;
+    }
+  }
+}
