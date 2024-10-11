@@ -10,7 +10,7 @@ export const useProductStore = defineStore('ProductStore', () => {
     try {
       loading.value = true
       setTimeout(async () => {
-        const response = await fetch(process.env.URL + '/items.json')
+        const response = await fetch(`${process.env.URL}/items.json`)
         const data = await response.json()
         productsArray.value = data
         productsItems.value = data
