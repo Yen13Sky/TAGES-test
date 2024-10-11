@@ -245,7 +245,9 @@ body {
     cursor: pointer;
     color: $fontColor;
     margin-right: 18px;
-
+  }
+  &__heart{
+    color: $fontColor;
   }
 
 }

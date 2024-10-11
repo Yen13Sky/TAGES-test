@@ -9,8 +9,8 @@
             </div>
             <div class="header-row__actions actions">
               <div class="actions__row">
-                <router-link to="/cart" class="actions__cart _icon-cart"></router-link>
-                <router-link to="/favorites" class="actions__heart _icon-heart"></router-link>
+                <router-link to="/cart" class="actions__cart _icon-cart cart"></router-link>
+                <router-link to="/favorites" class="actions__heart _icon-heart heart"></router-link>
               </div>
             </div>
           </div>
